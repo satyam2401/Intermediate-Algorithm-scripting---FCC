@@ -1,0 +1,21 @@
+
+function uniteUnique(arr1) {
+var arr =[];
+var index =[];
+var newarr =[];
+
+for(var i=0;i<arguments.length;i++){
+  arr = arguments[i];
+    
+    for(var j=0;j<arr.length;j++){
+      index = arr[j];
+      
+        if(newarr.indexOf(index) == -1){
+          newarr.push(index);
+        }
+    }
+ }
+  
+  return newarr;
+
+}
