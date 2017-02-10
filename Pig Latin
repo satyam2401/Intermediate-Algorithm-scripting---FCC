@@ -1,0 +1,36 @@
+function translatePigLatin(str) {
+  var vowel = ["a","e","i","o","u"];
+  var n = [];
+  var min;
+  
+    function Min(n) {
+  return Math.min.apply(null, n);
+}
+  
+  
+  if(str[0]=="a" || str[0]=="e" || str[0]=="i" || str[0]=="o" || str[0]=="u"){
+    str = str + "way" ;
+    return str;
+  }  
+  else{
+  var j=0;
+  for(var i=0;i<vowel.length;i++){
+    n[j] = str.indexOf(vowel[i]);
+    j++;
+  }
+  
+  n = n.filter(function(x){
+    return x > -1 ;
+  });
+  
+
+  
+  var x= Min(n);
+  
+  var str1 = str.slice(x,(str.length));
+  
+  str= str1 + str.substr(0, x) + "ay";
+  return str;
+}
+
+}
