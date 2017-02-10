@@ -1,0 +1,46 @@
+
+function addTogether() {
+  
+  var sum =0,i,count=0,y;
+  var string ="";
+  //return typeof arguments[1];
+  function Adder(x) {
+    
+    return function(y) {
+      if(typeof y !=='number'){
+      return undefined;
+    }
+    else{
+      return x+y;
+    }
+
+    };
+  }
+
+  for(i=0;i<arguments.length;i++){
+    if(typeof arguments[i] !== 'number'){
+      count++;
+    }
+  }
+  
+  
+  if(count===0) {   
+    if(arguments.length==2){
+        sum  = arguments[0] + arguments[1];
+      return sum;
+    }
+    else if(arguments.length==1){
+
+       
+        sum = Adder(arguments[0]);
+      return sum;
+     }  
+
+    }
+  else{
+    return undefined;
+  }
+
+
+
+}
