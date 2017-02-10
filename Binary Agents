@@ -1,0 +1,18 @@
+
+function binaryAgent(str) {
+  
+  var digit=[];
+  var string=[];
+  var theArray = str.split(/\s+/);
+
+  for(var i=0;i<theArray.length;i++){
+   digit[i] = parseInt(theArray[i], 2);
+  }
+
+  for(var j=0;j<theArray.length;j++){
+  
+    string[j] = String.fromCharCode(digit[j]);
+  }
+  
+  return string.join("");
+}
