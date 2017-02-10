@@ -1,0 +1,29 @@
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var newarr=[];
+  
+  newarr=arr1.concat(arr2);
+  
+  newarr=newarr.sort();
+
+  newarr.sort(function(a,b){
+    return b-a;
+  });
+
+  for(var i=0;i<newarr.length;){
+ 
+  if(newarr[i]==newarr[i+1]){
+    newarr.splice(i,2);
+    i=0;
+    continue;
+    
+  }
+    i++;
+  }
+    
+  newArr= newarr;
+
+  
+  // Same, same; but different.
+  return newArr;
+}
