@@ -1,0 +1,64 @@
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  var b = [];
+  var property;
+  var count=0,i,j;
+  // Only change code below this line
+  
+  property = Object.keys(source);
+  
+  for( i=0;i<collection.length;i++){
+    for( j=0;j<property.length;j++){
+    if(collection[i].hasOwnProperty(property[j])){
+      count++;
+      }
+    }
+      b[i]= count;
+      count=0;
+  }
+
+  
+  if(b[0]==property.length){
+    
+    for(i=0;i<collection.length;i++){
+    
+        if(b[i]<property.length){
+           collection.splice(i, 1);
+        }  
+     }
+  }
+  
+  else  {
+  
+    i=0;
+    for(j=0;j<collection.length;){
+      if(b[i]<property.length){
+        collection.splice(j, 1);
+        j=0;
+        i++;
+        continue;
+      }
+        j++;
+      
+    }
+
+  }
+   
+    
+  for( i=0;i<collection.length;i++){
+    for( j=0;j<property.length;j++){
+  
+      if(collection[i][property[j]]===source[property[j]]){
+         arr.push(collection[i]);
+          break;
+        }
+     }
+  }
+  
+  
+    
+  
+  // Only change code above this line
+  return arr;
+}
