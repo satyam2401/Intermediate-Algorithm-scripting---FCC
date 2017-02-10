@@ -1,0 +1,20 @@
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+  var newarr =[];
+  var answer = function(x){
+  
+    if(Array.isArray(x)===false){
+      newarr.push(x);
+    }
+    else{
+        for (var a in x) {
+        answer(x[a]); 
+        }
+    }
+      
+  };
+  
+  arr.forEach(answer);
+  return newarr;
+
+}
