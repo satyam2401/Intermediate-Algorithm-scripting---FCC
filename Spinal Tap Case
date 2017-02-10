@@ -1,0 +1,11 @@
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  
+  str = str.replace(/([A-Z])/g, ' $1').trim();
+  str = str.replace(/[^a-z0-9+]+/gi, ' ');
+
+  str = str.toLowerCase();
+  str = str.replace(/\W+/g, "-");
+  return str;
+}
